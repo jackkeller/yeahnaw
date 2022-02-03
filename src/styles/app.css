@@ -1,0 +1,62 @@
+:root {
+  --light-peach: #f5eeeb;
+  --peach: #f2d2c4;
+  --burning-sand: d38962;
+  --te-papa-green: #2e4a45;
+  --celtic: #283f3c;
+  --patina: #64968d;
+  --white: #fff;
+
+  --container-max-width: 90%;
+
+  /* @media (min-width: 768px) {
+    --container-max-width: 80%;
+  }
+
+  @media (min-width: 992px) {
+    --container-max-width: 1200px;
+  } */
+}
+
+/* 
+sm 320px
+md 768px
+lg 992px
+xl 1440px
+*/
+
+body {
+  background-color: var(--celtic);
+  color: var(--white);
+  margin: 0;
+  min-height: 100vh;
+  padding: 0;
+}
+
+.app {
+  display: grid;
+  grid-template-areas: 'header' 'main' 'footer';
+  grid-template-rows: auto 1fr auto;
+  min-height: 100vh;
+}
+
+.app header {
+  grid-area: header;
+}
+
+.app main {
+  grid-area: main;
+}
+
+.app footer {
+  background-color: var(--white);
+  color: var(--celtic);
+  grid-area: footer;
+  height: 80px;
+  text-align: center;
+}
+
+.container {
+  margin: 0 auto;
+  max-width: var(--container-max-width);
+}
