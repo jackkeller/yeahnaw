@@ -9,14 +9,19 @@
 
   --container-max-width: 90%;
 
-  /* @media (min-width: 768px) {
+  @media (min-width: 768px) {
     --container-max-width: 80%;
   }
 
   @media (min-width: 992px) {
-    --container-max-width: 1200px;
-  } */
+    --container-max-width: 960px;
+  }
 }
+
+/* Tailwinded */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
 /* 
 sm 320px
@@ -26,6 +31,11 @@ xl 1440px
 */
 
 body {
+  @apply font-content text-white leading-6;
+
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+
   background-color: var(--celtic);
   color: var(--white);
   margin: 0;
@@ -38,14 +48,14 @@ body {
   grid-template-areas: 'header' 'main' 'footer';
   grid-template-rows: auto 1fr auto;
   min-height: 100vh;
-}
-
-.app header {
-  grid-area: header;
-}
-
-.app main {
-  grid-area: main;
+  
+  header {
+    grid-area: header;
+  }
+  
+  main {
+    grid-area: main;
+  }
 }
 
 .app footer {
