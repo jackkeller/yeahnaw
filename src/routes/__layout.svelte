@@ -1,15 +1,11 @@
-<script context="module">
-	export const load = async ({ url }) => ({
-		props: {
-			key: url.path
-		}
-	});
-</script>
-
 <script>
-  import { Question } from '@app/store.js'
-  import { onDestroy } from 'svelte'
+  import { getLocalStorage } from '@lib/utilities'
+  import { Question, Yeah, Naw } from '@app/store.js'
 	import '../styles/app.postcss'
+  export let key
+  export let displayQuestion
+
+  $: displayQuestion = getLocalStorage('question')
 </script>
 
 <svelte:head>
@@ -18,16 +14,16 @@
 
 <header>
 	<div class="container">
-		<h1 class="text-3xl font-semibold">{$Question}</h1>
+		<h1 class="text-3xl font-semibold">{displayQuestion}</h1>
 	</div>
 </header>
 
 <main>
 	<div class="container">
-		<slot />
+    <slot />
 	</div>
 </main>
 
 <footer>
-	<div class="container">I am a footer</div>
+	<div class="container">Yeah: {$Yeah} and Naw: {$Naw}</div>
 </footer>

@@ -1,16 +1,19 @@
 <script>
+	import { setLocalStorage } from '@lib/utilities.js'
 	import { Question } from '@app/store.js'
   export let placeholder = 'What is the meaning of life?'
   export let question = ''
 
   const submitQuestion = () => {
-    localStorage.setItem('question', question)
-    window.location.href = '/asked'
+    setLocalStorage('question', question)
+    location.href = '/asked'
   }
 
 </script>
 
 <h1 class="text-2xl font-bold mb-4">What do you want to ask?</h1>
 
-<input type="text" name="question" placeholder={placeholder} bind:value={question} class="text-celtic p-2 rounded-sm">
-<button class="bg-peach p-2 text-celtic rounded-sm" on:click={submitQuestion}>Ask</button>
+<div class="flex">
+  <input type="text" name="question" placeholder={placeholder} bind:value={question} class="text-celtic p-2 flex-1 rounded-sm">
+  <button class="bg-peach p-2 text-celtic rounded-sm ml-4" on:click={submitQuestion}>Ask</button>
+</div>
