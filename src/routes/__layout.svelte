@@ -1,16 +1,15 @@
+<script context="module">
+	export const load = async ({ url }) => ({
+		props: {
+			key: url.path
+		}
+	});
+</script>
+
 <script>
+  import { Question } from '@app/store.js'
+  import { onDestroy } from 'svelte'
 	import '../styles/app.postcss'
-  // export let displayQuestion
-
-  // const getLocalStorage = (item) => {
-  //   return localStorage.getItem(item)
-  // }
-
-  // const setLocalStorage = (item, value) => {
-  //   localStorage.setItem(item, value)
-  // }
-
-  // $: displayQuestion = getLocalStorage('question')
 </script>
 
 <svelte:head>
@@ -19,7 +18,7 @@
 
 <header>
 	<div class="container">
-		<h1></h1>
+		<h1 class="text-3xl font-semibold">{$Question}</h1>
 	</div>
 </header>
 

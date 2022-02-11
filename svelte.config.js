@@ -6,14 +6,18 @@ import adapter from '@sveltejs/adapter-netlify';
 const config = {
 	kit: {
 		adapter: adapter(),
-		vite: {
+    vite: {
+      ssr: {
+        external: ['whatwg-url'],
+      },
 			resolve: {
-				alias: {
+        alias: {
+          '@app': path.resolve('./src/'),
 					'@lib': path.resolve('./src/lib'),
 					'@components': path.resolve('./src/lib/components')
 				}
 			}
-		}
+    }
 	},
 	preprocess: [
 		preprocess({

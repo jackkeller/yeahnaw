@@ -1,9 +1,10 @@
 <script>
+	import { Question } from '@app/store.js'
   export let placeholder = 'What is the meaning of life?'
   export let question = ''
 
   const submitQuestion = () => {
-    window.localStorage.setItem('question', question)
+    localStorage.setItem('question', question)
     window.location.href = '/asked'
   }
 
