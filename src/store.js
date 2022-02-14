@@ -1,11 +1,9 @@
-import { writable } from "svelte/store"
-import { getLocalStorage, setLocalStorage } from "@lib/utilities.js"
+import { writable } from 'svelte/store';
+import { getLocalStorage } from '@lib/utilities';
 
-const getQuestion = getLocalStorage('question')
-export const Question = writable(getQuestion ? getQuestion : 'What is your name?')
+const getQuestion = getLocalStorage('question');
+export const Question = writable(getQuestion);
 
-const getYeah = getLocalStorage('yeah')
-export const Yeah = writable(getYeah ? getYeah : 0)
+export const Yeah = writable(0);
 
-const getNaw = getLocalStorage('naw')
-export const Naw = writable(getNaw ? getNaw : 0)
+export const Naw = writable(0);
