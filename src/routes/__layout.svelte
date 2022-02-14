@@ -15,6 +15,8 @@
 		NawCount = n;
 	});
 
+  (displayQuestion === null) ? displayQuestion = 'Yeah Naw' : displayQuestion = displayQuestion;
+
 	$: TotalCount = YeahCount + NawCount;
 </script>
 
