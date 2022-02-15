@@ -1,13 +1,13 @@
 <script>
-	import { setLocalStorage } from '@lib/utilities.js';
-	import { Question } from '@app/store.js';
-	export let placeholder = 'What is the meaning of life?';
-	export let question = '';
+	import { setLocalStorage } from '@lib/utilities.js'
+	import { Question } from '@app/store.js'
+	export let placeholder = 'What is the meaning of life?'
+	export let question = ''
 
 	const submitQuestion = () => {
-		setLocalStorage('question', question);
-		location.href = '/asked';
-	};
+		setLocalStorage('question', question)
+		location.href = '/asked'
+	}
 </script>
 
 <h1 class="text-2xl font-bold mb-4">What do you want to ask?</h1>

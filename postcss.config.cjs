@@ -1,13 +1,13 @@
-const tailwindcss = require('tailwindcss');
-const autoprefixer = require('autoprefixer');
-const cssnano = require('cssnano');
-const nesting = require('postcss-nested');
-const postcssimport = require('postcss-import');
-const pxtorem = require('postcss-pixels-to-rem');
-const fontVariant = require('postcss-font-variant');
+const tailwindcss = require('tailwindcss')
+const autoprefixer = require('autoprefixer')
+const cssnano = require('cssnano')
+const nesting = require('postcss-nested')
+const postcssimport = require('postcss-import')
+const pxtorem = require('postcss-pixels-to-rem')
+const fontVariant = require('postcss-font-variant')
 
-const mode = process.env.NODE_ENV;
-const dev = mode === 'development';
+const mode = process.env.NODE_ENV
+const dev = mode === 'development'
 
 const config = {
 	plugins: [
@@ -24,6 +24,6 @@ const config = {
 				preset: 'default'
 			})
 	]
-};
+}
 
-module.exports = config;
+module.exports = config

@@ -1,15 +1,15 @@
 <script>
-	import { onMount } from 'svelte';
-	export let count = 60;
-	let i = count;
+	import { onMount } from 'svelte'
+	export let count = 60
+	let i = count
 
 	const countdownTimer = () => {
-		count = i;
-		i--;
-		i < 0 ? (count = 'done') : setTimeout(countdownTimer, 1000);
-	};
+		count = i
+		i--
+		i < 0 ? (count = 'done') : setTimeout(countdownTimer, 1000)
+	}
 
-	onMount(countdownTimer);
+	onMount(countdownTimer)
 </script>
 
 <div class={`counter${count === 'done' ? ' done' : ''}`}>{count}</div>

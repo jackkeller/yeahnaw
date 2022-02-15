@@ -1,23 +1,23 @@
 <script>
-	import '../styles/app.postcss';
-	import { Question, Yeah, Naw } from '@app/store.js';
-	export let displayQuestion, YeahCount, NawCount, TotalCount;
+	import '../styles/app.postcss'
+	import { Question, Yeah, Naw } from '@app/store.js'
+	export let displayQuestion, YeahCount, NawCount, TotalCount
 
 	Question.subscribe((whatnow) => {
-		displayQuestion = whatnow;
-	});
+		displayQuestion = whatnow
+	})
 
 	Yeah.subscribe((y) => {
-		YeahCount = y;
-	});
+		YeahCount = y
+	})
 
 	Naw.subscribe((n) => {
-		NawCount = n;
-	});
+		NawCount = n
+	})
 
-  (displayQuestion === null) ? displayQuestion = 'Yeah Naw' : displayQuestion = displayQuestion;
+	displayQuestion === null ? (displayQuestion = 'Yeah Naw') : (displayQuestion = displayQuestion)
 
-	$: TotalCount = YeahCount + NawCount;
+	$: TotalCount = YeahCount + NawCount
 </script>
 
 <svelte:head>
