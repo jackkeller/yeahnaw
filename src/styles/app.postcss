@@ -7,14 +7,33 @@
 	--patina: #64968d;
 	--white: #fff;
 
+  @media (prefers-color-scheme: dark) {
+    --light-peach: #f5eeeb;
+    --peach: #f2d2c4;
+    --burning-sand: d38962;
+    --te-papa-green: #2e4a45;
+    --celtic: #283f3c;
+    --patina: #64968d;
+    --white: #fff;
+  }
+
 	--container-max-width: 90%;
+  --thumb-scale: 0.5;
+  --thumb-translate-no: -45%;
+  --thumb-translate-yes: 45%;
 
 	@media screen(md) {
 		--container-max-width: 80%;
+    --thumb-scale: 0.75;
+    --thumb-translate-no: -15%;
+    --thumb-translate-yes: 15%;
 	}
 
 	@media screen(lg) {
 		--container-max-width: 960px;
+    --thumb-scale: 1;
+    --thumb-translate-no: 5%;
+    --thumb-translate-yes: 5%;
 	}
 }
 
