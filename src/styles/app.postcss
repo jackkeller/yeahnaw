@@ -1,46 +1,55 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap');
+
 :root {
 	--light-peach: #f5eeeb;
 	--peach: #f2d2c4;
-	--burning-sand: d38962;
+	--burning-sand: #d38962;
 	--te-papa-green: #2e4a45;
 	--celtic: #283f3c;
 	--patina: #64968d;
 	--white: #fff;
 
-  @media (prefers-color-scheme: dark) {
-    --light-peach: #f5eeeb;
-    --peach: #f2d2c4;
-    --burning-sand: d38962;
-    --te-papa-green: #2e4a45;
-    --celtic: #283f3c;
-    --patina: #64968d;
-    --white: #fff;
-  }
+	@media (prefers-color-scheme: dark) {
+		--light-peach: #f5eeeb;
+		--peach: #f2d2c4;
+		--burning-sand: #d38962;
+		--te-papa-green: #2e4a45;
+		--celtic: #283f3c;
+		--patina: #64968d;
+		--white: #fff;
+	}
 
-  --grid-template-areas: 'header' 'main' 'footer';
-  --grid-template-rows: auto 1fr auto;
-  --grid-template-columns: 1fr;
+	--grid-app-areas: 'main' 'footer';
+	--grid-app-rows: 1fr auto;
+	--grid-app-columns: 1fr;
+
+  --grid-vote-areas: 'question' 'divider' 'throw-hands';
+	--grid-vote-rows: 1fr 40px 1fr;
+	--grid-vote-columns: 1fr;
 
 	--container-max-width: 90%;
-  --thumb-scale: 0.5;
-  --thumb-translate-no: -45%;
-  --thumb-translate-yes: 45%;
+	--thumb-scale: 0.5;
+	--thumb-translate-no: -45%;
+	--thumb-translate-yes: 45%;
+
+	--base-font: 'Roboto';
 
 	@media screen(md) {
 		--container-max-width: 80%;
-    --thumb-scale: 0.75;
-    --thumb-translate-no: -15%;
-    --thumb-translate-yes: 15%;
-    --grid-template-areas: 'header main' 'footer footer';
-    --grid-template-rows: 1fr auto;
-    --grid-template-columns: repeat(2, 1fr);
+		--thumb-scale: 0.75;
+		--thumb-translate-no: -15%;
+		--thumb-translate-yes: 15%;
+
+    --grid-vote-areas: 'question divider throw-hands';
+    --grid-vote-rows: 1fr;
+	  --grid-vote-columns: 1fr 60px 1fr;
 	}
 
 	@media screen(lg) {
 		--container-max-width: 960px;
-    --thumb-scale: 1;
-    --thumb-translate-no: 1%;
-    --thumb-translate-yes: 0%;
+		--thumb-scale: 1;
+		--thumb-translate-no: 1%;
+		--thumb-translate-yes: 0%;
 	}
 }
 
@@ -59,9 +68,9 @@ body {
 .app {
 	@apply min-h-screen grid;
 
-	grid-template-areas: var(--grid-template-areas);
-  grid-template-columns: var(--grid-template-columns);
-	grid-template-rows: var(--grid-template-rows);
+	grid-template-areas: var(--grid-app-areas);
+	grid-template-columns: var(--grid-app-columns);
+	grid-template-rows: var(--grid-app-rows);
 
 	header {
 		@apply h-16 flex items-center;
@@ -70,8 +79,8 @@ body {
 	}
 
 	main {
-    @apply overflow-x-hidden;
-    
+		@apply overflow-x-hidden;
+
 		grid-area: main;
 	}
 

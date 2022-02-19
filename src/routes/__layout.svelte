@@ -24,14 +24,8 @@
 	<title>Yeah Naw</title>
 </svelte:head>
 
-<header>
-	<div class="container">
-		<h1 class="text-3xl font-semibold">{displayQuestion}</h1>
-	</div>
-</header>
-
 <main>
-  <slot />
+	<slot />
 </main>
 
 <footer>

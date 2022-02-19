@@ -18,7 +18,7 @@
 <style>
 	.counter {
 		@apply text-center text-4xl mx-auto bg-white text-celtic w-20 h-20 rounded-md shadow-lg transition-all duration-100 ease-in-out transform;
-    
+
 		line-height: 2.2;
 	}
 	.done {

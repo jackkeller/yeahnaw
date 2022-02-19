@@ -24,9 +24,7 @@ const config = {
 				white: 'var(--white)'
 			},
 			fontFamily: {
-				content: ['Nunito', 'var(--base-font)'],
-				heading: ['Nunito', 'var(--base-font)'],
-				code: ['Fira Code', 'monospace']
+				content: ['Roboto', 'var(--base-font)']
 			}
 		}
 	},
