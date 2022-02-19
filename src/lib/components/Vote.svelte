@@ -1,13 +1,13 @@
 <script>
-	import Svg from '@components/Svg.svelte';
+	import Assets from '@components/Assets.svelte';
 </script>
 
 <div class="flex justify-center">
   <button class="button-yeah border-patina">
-    <Svg asset="vote-up" />
+    <Assets name="vote-up" />
   </button>
   <button class="button-naw border-burningsand">
-    <Svg asset="vote-down" />
+    <Assets name="vote-down" />
   </button>
 </div>
 

@@ -1,6 +1,6 @@
 <script>
 	import { Yeah, Naw } from '@app/store.js'
-	import Svg from '@components/Svg.svelte'
+	import Assets from '@components/Assets.svelte'
 	export let yeahPercent,
 		nawPercent,
 		up,
@@ -22,15 +22,15 @@
 <div class="thumbs">
 	<div class="thumb up" style="left: {up}%">
 		<div class="entry" />
-		<Svg asset="arm-up" />
+		<Assets name="arm-up" />
 	</div>
 	<div class="thumb down" style="right: {down}%">
 		<div class="entry" />
-		<Svg asset="arm-down" />
+		<Assets name="arm-down" />
 	</div>
 </div>
 
-<style lang="postcss">
+<style lang="postcss" global>
 	.thumbs {
 		@apply box-border mx-2 overflow-x-hidden relative h-52 flex items-center;
 
