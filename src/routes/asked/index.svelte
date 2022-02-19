@@ -1,18 +1,18 @@
 <script>
-	import Vote from './../../lib/components/Vote.svelte';
+	import Vote from '@components/Vote.svelte'
 	import DisplayQuestion from '@components/DisplayQuestion.svelte'
 	import Counter from '@components/Counter.svelte'
 	import Thumbs from '@components/Thumbs.svelte'
-  import Assets from '@components/Assets.svelte'
+	import Assets from '@components/Assets.svelte'
 	import { Question, Yeah, Naw } from '@app/store.js'
 
 	export let TotalCount = 0,
 		yeah,
 		naw
 
-	Yeah.subscribe((y) => yeah = y)
+	Yeah.subscribe((y) => (yeah = y))
 
-	Naw.subscribe((n) => naw = n)
+	Naw.subscribe((n) => (naw = n))
 
 	$: TotalCount = yeah + naw
 
@@ -52,43 +52,43 @@
 </svelte:head>
 
 <div class="voting">
-  <div class="question">
-    <DisplayQuestion />
-    <Vote />
-  </div>
-  <div class="divider">
-    <Assets name="wave-mobile" />
-    <Assets name="wave-desktop" />
-  </div>
-  <div class="throw-hands">
-    <Thumbs {yeah} {naw} />
-    <Counter />
-  </div>
+	<div class="question">
+		<DisplayQuestion />
+		<Vote />
+	</div>
+	<div class="divider">
+		<Assets name="wave-mobile" />
+		<Assets name="wave-desktop" />
+	</div>
+	<div class="throw-hands">
+		<Thumbs {yeah} {naw} />
+		<Counter />
+	</div>
 </div>
-  
+
 <style>
-  .voting {
-    @apply grid h-full relative;
+	.voting {
+		@apply grid h-full relative;
 
-    grid-template-areas: var(--grid-vote-areas);
-    grid-template-columns: var(--grid-vote-columns);
-    grid-template-rows: var(--grid-vote-rows);
-  }
+		grid-template-areas: var(--grid-vote-areas);
+		grid-template-columns: var(--grid-vote-columns);
+		grid-template-rows: var(--grid-vote-rows);
+	}
 
-  .question {
-    @apply grid content-center;
+	.question {
+		@apply grid content-center;
 
-    grid-area: question;
-  }
+		grid-area: question;
+	}
 
-  .divider {
-    @apply absolute overflow-hidden leading-none w-full inset-0;
-    grid-area: divider;
-  }
+	.divider {
+		@apply absolute overflow-hidden leading-none w-full inset-0;
+		grid-area: divider;
+	}
 
-  .throw-hands {
-    @apply bg-peach grid content-center;
+	.throw-hands {
+		@apply bg-peach grid content-center;
 
-    grid-area: throw-hands;
-  }
+		grid-area: throw-hands;
+	}
 </style>

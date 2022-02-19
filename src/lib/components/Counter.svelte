@@ -17,7 +17,7 @@
 <!-- <button class="mx-auto mt-6 block" on:click={countdownTimer}>Start Countdown</button> -->
 <style>
 	.counter {
-		@apply text-center text-4xl mx-auto bg-white text-celtic w-20 h-20 rounded-md shadow-lg transition-all duration-100 ease-in-out transform;
+		@apply text-center text-4xl mx-auto text-celtic w-20 h-20 transition-all duration-100 ease-in-out transform;
 
 		line-height: 2.2;
 	}

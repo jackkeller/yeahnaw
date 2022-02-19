@@ -36,17 +36,18 @@
 
 		&:before {
 			@apply absolute bg-peach w-2 block h-full container z-10;
-			content: '';
+
 			border-radius: 0 50% 50% 0;
 			box-shadow: 0.25rem 0 1rem 0.05rem rgb(0 0 0 / 50%);
+			content: '';
 		}
 
 		&:after {
-			@apply absolute bg-peach w-2 block h-full z-10;
-			content: '';
+			@apply absolute bg-peach w-2 block h-full z-10 right-0;
+
 			border-radius: 50% 0 0 50%;
-			right: 0;
 			box-shadow: -0.25rem 0 1rem 0.05rem rgb(0 0 0 / 50%);
+			content: '';
 		}
 
 		.thumb {
