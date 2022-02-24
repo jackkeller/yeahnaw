@@ -109,11 +109,11 @@
 		}
 
 		.divider-mobile {
-			@apply h-10 w-full md:hidden;
+			@apply h-10 w-full lg:hidden;
 		}
 
 		.divider-desktop {
-			@apply w-16 h-full sm:hidden;
+			@apply w-16 h-full mdmax:hidden;
 		}
 	}
 </style>

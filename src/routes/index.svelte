@@ -17,8 +17,8 @@
 
 <div class="container pt-10">
 	<DisplayQuestion />
-	<h2 class="text-2xl font-bold mb-4">What do you want to ask?</h2>
-	<form on:submit|preventDefault={submitQuestion}>
+	<h2 class="text-2xl font-bold mb-4 px-8 md:px-16">What do you want to ask?</h2>
+	<form on:submit|preventDefault={submitQuestion} class="px-8 md:px-16">
 		<div class="flex">
 			<input
 				type="text"

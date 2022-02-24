@@ -1,23 +1,12 @@
 <script>
-	import { onMount } from 'svelte'
-	export let count = 60
-	let i = count
-
-	const countdownTimer = () => {
-		count = i
-		i--
-		i < 0 ? (count = 'done') : setTimeout(countdownTimer, 1000)
-	}
-
-	onMount(countdownTimer)
+	export let count
 </script>
 
-<div class={`counter${count === 'done' ? ' done' : ''}`}>{count}</div>
+<div class={`counter${count === 'done' ? ' done' : ''}`}>{count === 'done' ? 0 : count}</div>
 
-<!-- <button class="mx-auto mt-6 block" on:click={countdownTimer}>Start Countdown</button> -->
 <style>
 	.counter {
-		@apply text-center text-4xl mx-auto text-celtic w-20 h-20 transition-all duration-100 ease-in-out transform;
+		@apply text-center text-4xl mx-auto text-white w-20 h-20 transition-all duration-100 ease-in-out transform;
 
 		line-height: 2.2;
 	}

@@ -1,49 +1,83 @@
 <script>
+	import { onMount } from 'svelte'
+	import { setLocalStorage } from '@lib/utilities.js'
+	import { Question, Yeah, Naw } from '@app/store.js'
 	import Vote from '@components/Vote.svelte'
 	import DisplayQuestion from '@components/DisplayQuestion.svelte'
 	import Counter from '@components/Counter.svelte'
 	import Thumbs from '@components/Thumbs.svelte'
 	import Assets from '@components/Assets.svelte'
-	import { Question, Yeah, Naw } from '@app/store.js'
 
 	export let TotalCount = 0,
 		yeah,
 		naw
 
-	Yeah.subscribe((y) => (yeah = y))
-
-	Naw.subscribe((n) => (naw = n))
-
-	$: TotalCount = yeah + naw
+	let count = 60,
+		pollComplete = false,
+		i = count
 
 	const randomQuestion = ['yeah', 'naw']
-	const randomVoter = () => {
-		const random = randomQuestion[Math.floor(Math.random() * randomQuestion.length)]
 
-		switch (random) {
-			case 'yeah':
-				Yeah.update((n) => n + 1)
-				break
-			case 'naw':
-				Naw.update((n) => n + 1)
-				break
+	Yeah.subscribe((y) => (yeah = y))
+	Naw.subscribe((n) => (naw = n))
+
+	const countdownTimer = () => {
+		if (!pollComplete) {
+			count = i
+			i--
+			i < 0 ? (count = 'done') : setTimeout(countdownTimer, 1000)
+		} else {
+			count = 'done'
 		}
+	}
+
+	const randomVoter = () => {
+		if (!pollComplete) {
+			const random = randomQuestion[Math.floor(Math.random() * randomQuestion.length)]
+
+			switch (random) {
+				case 'yeah':
+					Yeah.update((n) => n + 1)
+					break
+				case 'naw':
+					Naw.update((n) => n + 1)
+					break
+			}
+		} else {
+			pollsClosed()
+		}
+	}
+
+	const pollsClosed = () => {
+		setLocalStorage('naw', naw)
+		setLocalStorage('yeah', yeah)
+		console.log('polls closed')
+
+		// goto('/asked/answered')
 	}
 
 	const voting = () => {
-		const min = 250,
-			max = 1250
-		const random = Math.floor(Math.random() * (max - min + 1)) + min
+		if (!pollComplete) {
+			const min = 250,
+				max = 750
+			const random = Math.floor(Math.random() * (max - min + 1)) + min
 
-		if (TotalCount < 50) {
-			randomVoter()
+			if (TotalCount < 50) {
+				randomVoter()
 
-			setTimeout(() => {
-				setTimeout(voting, random)
-			}, random)
+				setTimeout(() => {
+					setTimeout(voting, random)
+				}, random)
+			}
+		} else {
+			pollsClosed()
 		}
 	}
 
+	$: TotalCount = yeah + naw
+	$: pollComplete = TotalCount === 50 || count === 'done'
+
+	onMount(countdownTimer)
 	voting()
 </script>
 
@@ -55,6 +89,7 @@
 	<div class="question">
 		<DisplayQuestion />
 		<Vote />
+		<Counter {count} />
 	</div>
 	<div class="divider">
 		<Assets name="wave-mobile" />
@@ -62,7 +97,6 @@
 	</div>
 	<div class="throw-hands">
 		<Thumbs {yeah} {naw} />
-		<Counter />
 	</div>
 </div>
 

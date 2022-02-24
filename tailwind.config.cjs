@@ -5,6 +5,7 @@ const config = {
 		screens: {
 			sm: { max: '767px' },
 			md: { min: '768px' },
+			mdmax: { max: '991px' },
 			lg: { min: '992px' },
 			xl: { min: '1240px' }
 		},
