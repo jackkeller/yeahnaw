@@ -1,5 +1,6 @@
 <script>
 	import { onMount } from 'svelte'
+  import { goto } from '$app/navigation'
 	import { setLocalStorage } from '@lib/utilities.js'
 	import { Question, Yeah, Naw } from '@app/store.js'
 	import Vote from '@components/Vote.svelte'
@@ -53,7 +54,7 @@
 		setLocalStorage('yeah', yeah)
 		console.log('polls closed')
 
-		// goto('/asked/answered')
+		goto('/asked/answered')
 	}
 
 	const voting = () => {

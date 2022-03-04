@@ -1,7 +1,9 @@
 <script>
 	import '../styles/app.postcss'
+	import { getLocalStorage } from '@lib/utilities.js'
 	import { Question, Yeah, Naw } from '@app/store.js'
-	export let displayQuestion, YeahCount, NawCount, TotalCount
+
+  export let displayQuestion, YeahCount, NawCount, TotalCount
 
 	Question.subscribe((whatnow) => {
 		displayQuestion = whatnow
@@ -9,15 +11,17 @@
 
 	Yeah.subscribe((y) => {
 		YeahCount = y
+    YeahCount === 0 ? YeahCount = getLocalStorage('yeah') : 0
 	})
 
 	Naw.subscribe((n) => {
 		NawCount = n
+    NawCount === 0 ? NawCount = getLocalStorage('naw') : 0
 	})
 
 	displayQuestion === null ? (displayQuestion = 'Yeah Naw') : (displayQuestion = displayQuestion)
 
-	$: TotalCount = YeahCount + NawCount
+	$: TotalCount = Number(YeahCount) + Number(NawCount)
 </script>
 
 <svelte:head>
@@ -31,7 +35,7 @@
 <footer>
 	<div class="container">
 		<div class="flex items-center justify-center h-20">
-			Yeah: {YeahCount} and Naw: {NawCount} / Total: {TotalCount}
+			Yeah: {YeahCount} and Naw: {NawCount} / Total: {TotalCount.toString()}
 		</div>
 	</div>
 </footer>

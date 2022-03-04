@@ -1,12 +1,26 @@
 <script>
 	import Assets from '@components/Assets.svelte'
+	import { Yeah, Naw } from '@app/store.js'
+
+  export let yeah, naw
+
+  Yeah.subscribe((y) => (yeah = y))
+	Naw.subscribe((n) => (naw = n))
+
+  const vote = v => {
+    if (v === 'y') {
+      Yeah.update((n) => n + 1)
+    } else {
+      Naw.update((n) => n + 1)
+    }
+  }
 </script>
 
 <div class="flex justify-center">
-	<button class="button-yeah border-patina">
+	<button class="button-yeah border-patina" on:click={() => vote('y')}>
 		<Assets name="vote-up" />
 	</button>
-	<button class="button-naw border-burningsand">
+	<button class="button-naw border-burningsand" on:click={() => vote('n')}>
 		<Assets name="vote-down" />
 	</button>
 </div>

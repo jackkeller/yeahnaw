@@ -4,6 +4,8 @@ import { getLocalStorage } from '@lib/utilities'
 const getQuestion = getLocalStorage('question')
 export const Question = writable(getQuestion)
 
-export const Yeah = writable(0)
+const getYeah = getLocalStorage('yeah')
+export const Yeah = writable(getYeah)
 
-export const Naw = writable(0)
+const getNaw = getLocalStorage('naw')
+export const Naw = writable(getNaw)
