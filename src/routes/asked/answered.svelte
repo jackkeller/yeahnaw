@@ -1,23 +1,24 @@
 <script>
-  import { Question, Yeah, Naw } from '@app/store.js'
+	import { Question, Yeah, Naw } from '@app/store.js'
 	import DisplayQuestion from '@components/DisplayQuestion.svelte'
 	import Assets from '@components/Assets.svelte'
 
-  export let TotalCount = 0,
-    yeah,
-    naw,
-    Winner
+	export let TotalCount = 0,
+		question,
+		yeah,
+		naw,
+		Winner
 
-  Yeah.subscribe((y) => (yeah = y))
+	Question.subscribe((q) => (question = q))
+	Yeah.subscribe((y) => (yeah = y))
 	Naw.subscribe((n) => (naw = n))
 
-  $: TotalCount = yeah + naw
-  $: Winner = (yeah > naw) ? 'Yeah' : 'Naw'
-
+	$: TotalCount = yeah + naw
+	$: Winner = yeah > naw ? 'Yeah' : 'Naw'
 </script>
 
 <svelte:head>
-	<title>Answered {$Question} Yeah Naw</title>
+	<title>Answered "{question}" using Yeah Naw</title>
 </svelte:head>
 
 <div class="voting">
@@ -29,7 +30,7 @@
 		<Assets name="wave-desktop" />
 	</div>
 	<div class="winner-winner-chicken-dinner">
-    <h2>RESULTS: {Winner}</h2>
+		<h2>RESULTS: {Winner}</h2>
 	</div>
 </div>
 

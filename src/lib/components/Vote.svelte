@@ -2,18 +2,18 @@
 	import Assets from '@components/Assets.svelte'
 	import { Yeah, Naw } from '@app/store.js'
 
-  export let yeah, naw
+	export let yeah, naw
 
-  Yeah.subscribe((y) => (yeah = y))
+	Yeah.subscribe((y) => (yeah = y))
 	Naw.subscribe((n) => (naw = n))
 
-  const vote = v => {
-    if (v === 'y') {
-      Yeah.update((n) => n + 1)
-    } else {
-      Naw.update((n) => n + 1)
-    }
-  }
+	const vote = (v) => {
+		if (v === 'y') {
+			Yeah.update((n) => n + 1)
+		} else {
+			Naw.update((n) => n + 1)
+		}
+	}
 </script>
 
 <div class="flex justify-center">
