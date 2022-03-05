@@ -19,7 +19,7 @@
 	$: down = ((100 * nawPercent) / total).toFixed(0)
 </script>
 
-<div class="thumbs">
+<div class="thumbs" class:upshadow={up > 1} class:downshadow={down > 2}>
 	<div class="thumb up" style="left: {up}%">
 		<div class="entry" />
 		<Assets name="arm-up" />
@@ -38,16 +38,24 @@
 			@apply absolute bg-peach w-2 block h-full container z-10;
 
 			border-radius: 0 50% 50% 0;
-			box-shadow: 0.25rem 0 1rem 0.05rem rgb(0 0 0 / 50%);
 			content: '';
+			transition: all 0.25s ease-in-out;
+		}
+
+		&.upshadow:before {
+			box-shadow: 0.25rem 0 1rem 0.05rem rgb(0 0 0 / 50%);
 		}
 
 		&:after {
 			@apply absolute bg-peach w-2 block h-full z-10 right-0;
 
 			border-radius: 50% 0 0 50%;
-			box-shadow: -0.25rem 0 1rem 0.05rem rgb(0 0 0 / 50%);
 			content: '';
+			transition: all 0.25s ease-in-out;
+		}
+
+		&.downshadow:after {
+			box-shadow: -0.25rem 0 1rem 0.05rem rgb(0 0 0 / 50%);
 		}
 
 		.thumb {

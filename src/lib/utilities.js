@@ -8,6 +8,10 @@ export const setLocalStorage = (item, value) => {
 	localStorage.setItem(item, value)
 }
 
+export const removeLocalStorage = (item) => {
+	localStorage.removeItem(item)
+}
+
 export const routeToPage = (route) => {
 	goto(`${route}`)
 }

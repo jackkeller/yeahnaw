@@ -52,7 +52,7 @@
 	const pollsClosed = () => {
 		setLocalStorage('naw', naw)
 		setLocalStorage('yeah', yeah)
-		console.log('polls closed')
+		clearTimeout(countdownTimer)
 
 		goto('/asked/answered')
 	}
@@ -97,7 +97,7 @@
 		<Assets name="wave-desktop" />
 	</div>
 	<div class="throw-hands">
-		<Thumbs {yeah} {naw} />
+		<Thumbs />
 	</div>
 </div>
 

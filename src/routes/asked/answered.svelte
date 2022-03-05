@@ -1,4 +1,6 @@
 <script>
+	import { goto } from '$app/navigation'
+	import { removeLocalStorage } from '@lib/utilities.js'
 	import { Question, Yeah, Naw } from '@app/store.js'
 	import DisplayQuestion from '@components/DisplayQuestion.svelte'
 	import Assets from '@components/Assets.svelte'
@@ -7,7 +9,12 @@
 		question,
 		yeah,
 		naw,
-		Winner
+		Winner,
+		newQuestion = false
+
+	setTimeout(() => {
+		newQuestion = true
+	}, 5000)
 
 	Question.subscribe((q) => (question = q))
 	Yeah.subscribe((y) => (yeah = y))
@@ -15,6 +22,17 @@
 
 	$: TotalCount = yeah + naw
 	$: Winner = yeah > naw ? 'Yeah' : 'Naw'
+
+	const resetQuestion = () => {
+		removeLocalStorage('question')
+		removeLocalStorage('yeah')
+		removeLocalStorage('naw')
+		Question.set(null)
+		Yeah.set(0)
+		Naw.set(0)
+
+		goto('/')
+	}
 </script>
 
 <svelte:head>
@@ -24,6 +42,13 @@
 <div class="voting">
 	<div class="question">
 		<DisplayQuestion />
+		{#if newQuestion}
+			<button
+				on:click={() => resetQuestion()}
+				class="bg-peach py-2 px-5 text-celtic inline-block rounded-sm mx-auto"
+				>Ask a New Question?</button
+			>
+		{/if}
 	</div>
 	<div class="divider">
 		<Assets name="wave-mobile" />
