@@ -35,7 +35,8 @@
 <footer>
 	<div class="container">
 		<div class="flex items-center justify-center h-20">
-			Yeah: {YeahCount} and Naw: {NawCount} / Total: {TotalCount.toString()}
+			Yeah: {YeahCount !== null ? YeahCount : 0} and Naw: {NawCount !== null ? NawCount : 0} / Total:
+			{TotalCount.toString()}
 		</div>
 	</div>
 </footer>

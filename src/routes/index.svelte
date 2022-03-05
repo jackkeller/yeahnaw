@@ -3,7 +3,14 @@
 	import { Question } from '@app/store.js'
 	import DisplayQuestion from '@components/DisplayQuestion.svelte'
 
-	export let placeholder = 'Would you love Pizza on Fridays?'
+	const randomQuestions = [
+		'Do you want free pizza on Fridays?',
+		'Do these jeans make my butt look big?',
+		'Would Kate beat Chike in a zero gravity fight?',
+		'Do you know the muffin man?'
+	]
+
+	export let placeholder = randomQuestions[Math.floor(Math.random() * randomQuestions.length)]
 	export let question = ''
 
 	const submitQuestion = () => {
