@@ -10,11 +10,16 @@
 		yeah,
 		naw,
 		Winner,
-		newQuestion = false
+		newQuestion = false,
+		approach = false
 
 	setTimeout(() => {
 		newQuestion = true
 	}, 5000)
+
+	setTimeout(() => {
+		approach = true
+	}, 10000)
 
 	Question.subscribe((q) => (question = q))
 	Yeah.subscribe((y) => (yeah = y))
@@ -48,6 +53,15 @@
 				class="bg-peach py-2 px-5 text-celtic inline-block rounded-sm mx-auto"
 				>Ask a New Question?</button
 			>
+		{/if}
+		{#if approach}
+			<div class="mx-auto px8 md:px-16 pt-12">
+				<a
+					href="/thoughts"
+					class="text-secondary underline hover:text-patina transition-colors duration-300 ease-in-out"
+					>Read about our approach</a
+				>
+			</div>
 		{/if}
 	</div>
 	<div class="divider">
