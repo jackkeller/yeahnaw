@@ -104,7 +104,7 @@
 			@apply relative block overflow-hidden inset-0;
 
 			.shape-fill {
-				fill: var(--peach);
+				fill: var(--secondary);
 			}
 		}
 

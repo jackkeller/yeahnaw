@@ -50,7 +50,7 @@
 		{#if newQuestion}
 			<button
 				on:click={() => resetQuestion()}
-				class="bg-peach py-2 px-5 text-celtic inline-block rounded-sm mx-auto"
+				class="bg-secondary py-2 px-5 text-celtic inline-block rounded-sm mx-auto"
 				>Ask a New Question?</button
 			>
 		{/if}
@@ -94,7 +94,7 @@
 	}
 
 	.winner-winner-chicken-dinner {
-		@apply bg-peach grid content-center;
+		@apply bg-secondary grid content-center;
 
 		grid-area: winner-winner-chicken-dinner;
 	}

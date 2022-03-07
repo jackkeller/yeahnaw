@@ -122,7 +122,7 @@
 	}
 
 	.throw-hands {
-		@apply bg-peach grid content-center;
+		@apply bg-secondary grid content-center;
 
 		grid-area: throw-hands;
 	}
