@@ -1,5 +1,6 @@
 <script>
 	import { goto } from '$app/navigation'
+  import { ConfettiExplosion } from 'svelte-confetti-explosion'
 	import { removeLocalStorage } from '@lib/utilities.js'
 	import { Question, Yeah, Naw } from '@app/store.js'
 	import DisplayQuestion from '@components/DisplayQuestion.svelte'
@@ -68,8 +69,9 @@
 		<Assets name="wave-mobile" />
 		<Assets name="wave-desktop" />
 	</div>
-	<div class="winner-winner-chicken-dinner">
-		<h2>RESULTS: {Winner}</h2>
+	<div class="winner-winner-chicken-dinner text-primary grid items-center">
+		<h2 class="text-primary text-4xl mx-auto">{Winner}</h2>
+    <ConfettiExplosion />
 	</div>
 </div>
 

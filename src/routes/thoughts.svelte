@@ -85,13 +85,14 @@
 		{/each}
 	</ul>
 
-	Back to the<a href="/asked/answered">Results</a>
+	<p>Back to the <a href="/asked/answered">Results</a></p>
 </div>
 
 <style>
 	h2 {
 		@apply text-2xl md:text-4xl font-light mb-4;
 	}
+
 	ul {
 		@apply list-disc ml-8 mb-12;
 	}
