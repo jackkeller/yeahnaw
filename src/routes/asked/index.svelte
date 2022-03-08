@@ -1,7 +1,7 @@
 <script>
 	import { onMount } from 'svelte'
 	import { goto } from '$app/navigation'
-	import { setLocalStorage } from '@lib/utilities.js'
+	import { getLocalStorage, setLocalStorage } from '@lib/utilities.js'
 	import { Question, Yeah, Naw } from '@app/store.js'
 	import Vote from '@components/Vote.svelte'
 	import DisplayQuestion from '@components/DisplayQuestion.svelte'
@@ -10,6 +10,7 @@
 	import Assets from '@components/Assets.svelte'
 
 	export let TotalCount = 0,
+		question,
 		yeah,
 		naw
 
@@ -21,6 +22,7 @@
 
 	Yeah.subscribe((y) => (yeah = y))
 	Naw.subscribe((n) => (naw = n))
+	question = getLocalStorage('question')
 
 	const countdownTimer = () => {
 		if (!pollComplete) {
@@ -83,7 +85,7 @@
 </script>
 
 <svelte:head>
-	<title>Asking {$Question} Yeah Naw</title>
+	<title>Asking "{question}" on Yeah Naw</title>
 </svelte:head>
 
 <div class="voting">

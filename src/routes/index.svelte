@@ -1,5 +1,6 @@
 <script>
 	import { setLocalStorage } from '@lib/utilities.js'
+	import { goto } from '$app/navigation'
 	import { Question } from '@app/store.js'
 	import DisplayQuestion from '@components/DisplayQuestion.svelte'
 
@@ -19,13 +20,17 @@
 			question = placeholder
 		}
 		setLocalStorage('question', question)
-		location.href = '/asked'
+		goto('/asked')
 	}
 </script>
 
+<svelte:head>
+	<title>Yeah Naw</title>
+</svelte:head>
+
 <div class="container pt-10">
 	<DisplayQuestion />
-	<h2 class="text-2xl font-bold mb-4 px-8 md:px-16">What do you want to ask?</h2>
+	<h2 class="text-2xl font-light mb-4 px-8 md:px-16">What do you want to ask?</h2>
 	<form on:submit|preventDefault={submitQuestion} class="px-8 md:px-16">
 		<div class="flex">
 			<input

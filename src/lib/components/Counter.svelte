@@ -6,7 +6,7 @@
 
 <style>
 	.counter {
-		@apply text-center text-4xl mx-auto text-white w-20 h-20 transition-all duration-100 ease-in-out transform;
+		@apply text-center text-9xl font-normal mx-auto text-white h-28 transition-all duration-100 ease-in-out transform;
 
 		line-height: 2.2;
 	}

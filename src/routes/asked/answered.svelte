@@ -1,7 +1,7 @@
 <script>
 	import { goto } from '$app/navigation'
-  import { ConfettiExplosion } from 'svelte-confetti-explosion'
-	import { removeLocalStorage } from '@lib/utilities.js'
+	import { ConfettiExplosion } from 'svelte-confetti-explosion'
+	import { getLocalStorage, removeLocalStorage } from '@lib/utilities.js'
 	import { Question, Yeah, Naw } from '@app/store.js'
 	import DisplayQuestion from '@components/DisplayQuestion.svelte'
 	import Assets from '@components/Assets.svelte'
@@ -11,6 +11,7 @@
 		yeah,
 		naw,
 		Winner,
+		WinnerPercent,
 		newQuestion = false,
 		approach = false
 
@@ -22,12 +23,13 @@
 		approach = true
 	}, 10000)
 
-	Question.subscribe((q) => (question = q))
 	Yeah.subscribe((y) => (yeah = y))
 	Naw.subscribe((n) => (naw = n))
+	question = getLocalStorage('question')
 
 	$: TotalCount = yeah + naw
 	$: Winner = yeah > naw ? 'Yeah' : 'Naw'
+	$: WinnerPercent = yeah > naw ? (yeah / 50) * 100 : (naw / 50) * 100
 
 	const resetQuestion = () => {
 		removeLocalStorage('question')
@@ -70,8 +72,10 @@
 		<Assets name="wave-desktop" />
 	</div>
 	<div class="winner-winner-chicken-dinner text-primary grid items-center">
-		<h2 class="text-primary text-4xl mx-auto">{Winner}</h2>
-    <ConfettiExplosion />
+		<h2 class="text-primary text-4xl mx-auto">
+			{Winner} won with {`${Math.round(WinnerPercent)}%`} of the Vote
+		</h2>
+		<ConfettiExplosion />
 	</div>
 </div>
 
