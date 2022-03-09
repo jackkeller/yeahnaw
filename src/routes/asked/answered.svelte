@@ -17,11 +17,11 @@
 
 	setTimeout(() => {
 		newQuestion = true
-	}, 5000)
+	}, 2500)
 
 	setTimeout(() => {
 		approach = true
-	}, 10000)
+	}, 5000)
 
 	Yeah.subscribe((y) => (yeah = y))
 	Naw.subscribe((n) => (naw = n))
@@ -75,7 +75,12 @@
 		<h2 class="text-primary text-4xl mx-auto">
 			{Winner} won with {`${Math.round(WinnerPercent)}%`} of the Vote
 		</h2>
-		<ConfettiExplosion />
+		<ConfettiExplosion
+			colors={['var(--primary)', 'var(--patina)', 'var(--white)', 'var(--burning-sand)']}
+			duration={4000}
+			force={0.8}
+			particleCount={420}
+		/>
 	</div>
 </div>
 
