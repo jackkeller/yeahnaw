@@ -27,7 +27,7 @@
 
 <style lang="postcss">
 	button {
-		@apply overflow-hidden border-4 bg-transparent rounded-full h-28 w-28 flex items-center mx-2 md:mx-4;
+		@apply overflow-hidden border-2 md:border-4 bg-transparent rounded-full h-20 w-20 md:h-28 md:w-28 flex items-center mx-2 md:mx-4;
 
 		&.button-yeah {
 			@apply justify-start;

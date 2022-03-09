@@ -27,10 +27,18 @@
 
 	--container-max-width: 90%;
 	--thumb-scale: 0.5;
-	--thumb-translate-no: -45%;
-	--thumb-translate-yes: 45%;
+	--thumb-translate-no: -50%;
+	--thumb-translate-yes: 50%;
 
 	--base-font: 'Roboto';
+
+	--intensify: intensify 1s infinite;
+	--extraintense: extraintense 1s infinite;
+
+	@media (prefers-reduced-motion: reduce) {
+		--intensify: none !important;
+		--extraintense: none !important;
+	}
 
 	@media (prefers-color-scheme: dark) {
 		--primary: var(--celtic);
@@ -98,4 +106,39 @@ body {
 	@apply mx-auto my-0;
 
 	max-width: var(--container-max-width);
+}
+
+.intensify {
+	animation: var(--intensify);
+}
+
+.extraintense {
+	animation: var(--extraintense);
+}
+
+@keyframes intensify {
+	0% {
+		transform: scale(1);
+	}
+	50% {
+		transform: scale(1.1);
+	}
+	100% {
+		transform: scale(1);
+	}
+}
+
+@keyframes extraintense {
+	0% {
+		text-shadow: 0 0 0 var(--white);
+	}
+	25% {
+		text-shadow: 1px 1px 20px var(--white);
+	}
+	35% {
+		text-shadow: 1px 1px 10px var(--white);
+	}
+	100% {
+		text-shadow: 0 0 0 var(--white);
+	}
 }

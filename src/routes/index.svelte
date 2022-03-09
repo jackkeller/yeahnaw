@@ -39,6 +39,7 @@
 				{placeholder}
 				bind:value={question}
 				class="text-celtic p-2 flex-1 rounded-sm"
+				autocomplete="off"
 			/>
 			<button type="submit" class="bg-secondary p-2 text-celtic rounded-sm ml-4">Ask</button>
 		</div>

@@ -58,7 +58,7 @@
 			>
 		{/if}
 		{#if approach}
-			<div class="mx-auto px8 md:px-16 pt-12">
+			<div class="mx-auto px8 md:px-16 pt-6 md:pt-12">
 				<a
 					href="/thoughts"
 					class="text-secondary underline hover:text-patina transition-colors duration-300 ease-in-out"
@@ -72,14 +72,14 @@
 		<Assets name="wave-desktop" />
 	</div>
 	<div class="winner-winner-chicken-dinner text-primary grid items-center">
-		<h2 class="text-primary text-4xl mx-auto">
-			{Winner} won with {`${Math.round(WinnerPercent)}%`} of the Vote
+		<h2 class="text-primary text-4xl mx-auto px-8 md:px-16 text-center md:text-left font-light">
+			<span>{Winner}</span> won with <span>{`${Math.round(WinnerPercent)}%`}</span> of the Vote
 		</h2>
 		<ConfettiExplosion
 			colors={['var(--primary)', 'var(--patina)', 'var(--white)', 'var(--burning-sand)']}
 			duration={4000}
 			force={0.8}
-			particleCount={420}
+			particleCount={180}
 		/>
 	</div>
 </div>
@@ -108,5 +108,9 @@
 		@apply bg-secondary grid content-center;
 
 		grid-area: winner-winner-chicken-dinner;
+	}
+
+	h2 > span {
+		@apply font-semibold;
 	}
 </style>
