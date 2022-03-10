@@ -6,8 +6,6 @@
 
 	const randomQuestions = [
 		'Do you want free pizza on Fridays?',
-		'Do these jeans make my butt look big?',
-		'Would Kate beat Chike in a zero gravity fight?',
 		'Do you know the muffin man?',
 		'Is the Toxic Crusader a good movie?'
 	]

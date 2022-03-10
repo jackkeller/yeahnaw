@@ -34,9 +34,11 @@
 
 <footer>
 	<div class="container">
-		<div class="flex items-center justify-center h-20">
+    <div class="flex items-center justify-center h-20 text-xl md:text-2xl">
+      {#if TotalCount > 0}
 			Yeah: {YeahCount !== null ? YeahCount : 0} and Naw: {NawCount !== null ? NawCount : 0} / Total:
 			{TotalCount.toString()}
+      {/if}
 		</div>
 	</div>
 </footer>

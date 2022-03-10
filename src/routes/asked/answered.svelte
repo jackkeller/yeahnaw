@@ -1,7 +1,7 @@
 <script>
 	import { goto } from '$app/navigation'
 	import { ConfettiExplosion } from 'svelte-confetti-explosion'
-	import { getLocalStorage, removeLocalStorage } from '@lib/utilities.js'
+	import { getLocalStorage, clearLocalStorage } from '@lib/utilities.js'
 	import { Question, Yeah, Naw } from '@app/store.js'
 	import DisplayQuestion from '@components/DisplayQuestion.svelte'
 	import Assets from '@components/Assets.svelte'
@@ -17,11 +17,11 @@
 
 	setTimeout(() => {
 		newQuestion = true
-	}, 2500)
+	}, 1500)
 
 	setTimeout(() => {
 		approach = true
-	}, 5000)
+	}, 2000)
 
 	Yeah.subscribe((y) => (yeah = y))
 	Naw.subscribe((n) => (naw = n))
@@ -32,9 +32,7 @@
 	$: WinnerPercent = yeah > naw ? (yeah / 50) * 100 : (naw / 50) * 100
 
 	const resetQuestion = () => {
-		removeLocalStorage('question')
-		removeLocalStorage('yeah')
-		removeLocalStorage('naw')
+		clearLocalStorage()
 		Question.set(null)
 		Yeah.set(0)
 		Naw.set(0)
