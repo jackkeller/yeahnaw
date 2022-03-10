@@ -9,7 +9,7 @@ export const setLocalStorage = (item, value) => {
 }
 
 export const clearLocalStorage = () => {
-  localStorage.clear()
+	localStorage.clear()
 }
 
 export const routeToPage = (route) => {

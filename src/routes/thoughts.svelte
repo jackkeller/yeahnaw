@@ -51,7 +51,9 @@
 
 	const approach = [
 		'We wanted to do things in a fun way, initial thoughts were of JibJab style but we ran out of time.',
-		'We thought about the the possibility of a tie needing a sudden death style playout but again, we ran out of time.'
+		'We thought about the the possibility of a tie needing a sudden death style playout but again, we ran out of time.',
+		'We did not TDD this, however it would have probably saved us some frustrations.',
+		'We hope that you liked the presentation, we sure had fun building this out!'
 	]
 </script>
 

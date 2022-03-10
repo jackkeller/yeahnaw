@@ -17,10 +17,10 @@
 </script>
 
 <div class="flex justify-center">
-	<button class="button-yeah border-patina" on:click={() => vote('y')} aria-label="Vote Yes">
+	<button class="button-yeah border-primaryalt" on:click={() => vote('y')} aria-label="Vote Yes">
 		<Assets name="vote-up" />
 	</button>
-	<button class="button-naw border-burningsand" on:click={() => vote('n')} aria-label="Vote No">
+	<button class="button-naw border-secondaryalt" on:click={() => vote('n')} aria-label="Vote No">
 		<Assets name="vote-down" />
 	</button>
 </div>

@@ -12,8 +12,11 @@ const config = {
 		extend: {
 			colors: {
 				transparent: 'transparent',
-				primary: 'var(--primary)',
-				secondary: 'var(--secondary)',
+        primary: 'var(--primary)',
+        primaryalt: 'var(--primary-alt)',
+        secondary: 'var(--secondary)',
+        secondaryalt: 'var(--secondary-alt)',
+        textcolor: 'var(--text-color)',
 				black: 'var(--black)',
 				mandarin: 'var(--mandarin)',
 				lightpeach: 'var(--light-peach)',

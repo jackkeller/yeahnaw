@@ -22,11 +22,11 @@
 <div class="thumbs" class:upshadow={up > 1} class:downshadow={down > 2}>
 	<div class="thumb up" style="left: {up}%">
 		<div class="entry" />
-		<Assets name="arm-up" />
+		<Assets name="arm-up" yeah={up} />
 	</div>
 	<div class="thumb down" style="right: {down}%">
 		<div class="entry" />
-		<Assets name="arm-down" />
+		<Assets name="arm-down" naw={down} />
 	</div>
 </div>
 

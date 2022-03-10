@@ -30,8 +30,10 @@
 	<DisplayQuestion />
 	<h2 class="text-2xl font-light mb-4 px-8 md:px-16">What do you want to ask?</h2>
 	<form on:submit|preventDefault={submitQuestion} class="px-8 md:px-16">
+    <label for="question-input" class="block pb-2 text-sm italic">Yes or No questions please.</label>
 		<div class="flex">
 			<input
+        id="question-input"
 				type="text"
 				name="question"
 				{placeholder}
