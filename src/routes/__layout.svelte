@@ -1,3 +1,7 @@
+<script context="module">
+  export const ssr = false
+</script>
+
 <script>
 	import '../styles/app.postcss'
 	import { getLocalStorage } from '@lib/utilities.js'

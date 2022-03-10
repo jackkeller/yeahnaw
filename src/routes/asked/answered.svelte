@@ -5,6 +5,7 @@
 	import { Question, Yeah, Naw } from '@app/store.js'
 	import DisplayQuestion from '@components/DisplayQuestion.svelte'
 	import Assets from '@components/Assets.svelte'
+  import Audio from '@components/Audio.svelte'
 
 	export let TotalCount = 0,
 		question,
@@ -30,6 +31,8 @@
 	$: TotalCount = yeah + naw
 	$: Winner = yeah > naw ? 'Yeah' : 'Naw'
 	$: WinnerPercent = yeah > naw ? (yeah / 50) * 100 : (naw / 50) * 100
+
+  const audioClip = yeah > naw ? 'applause' : 'cry'
 
 	const resetQuestion = () => {
 		clearLocalStorage()
@@ -79,6 +82,7 @@
 			force={0.8}
 			particleCount={180}
 		/>
+    <Audio clip={audioClip} />
 	</div>
 </div>
 
