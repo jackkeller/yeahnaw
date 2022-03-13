@@ -104,6 +104,29 @@
 	</svg>
 {/if}
 
+{#if name === 'moon'}
+	<svg xmlns="http://www.w3.org/2000/svg" class="w-10 h-10" viewBox="0 0 50 50">
+		<path
+			d="M43.81 29.354a1.565 1.565 0 00-1.956-1.033A16.412 16.412 0 0121.683 8.133a1.564 1.564 0 00-1.947-1.946A19.532 19.532 0 005.55 26.776a19.533 19.533 0 0017.685 17.675 19.533 19.533 0 0020.581-14.198 1.564 1.564 0 00-.006-.899z"
+			fill="var(--white)"
+		/>
+	</svg>
+{/if}
+
+{#if name === 'sun'}
+	<svg class="w-10 h-10" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+		<circle cx="12" cy="12" r="5.754" fill="#f08f00" />
+		<g fill="#f08f00">
+			<circle cx="3.09" cy="6.855" r="1.711" transform="rotate(-60 3.09 6.855)" />
+			<circle cx="3.09" cy="17.144" r="1.711" transform="rotate(-120 3.09 17.144)" />
+			<circle cx="12" cy="22.288" r="1.711" />
+			<circle cx="20.91" cy="17.144" r="1.711" transform="rotate(-60 20.91 17.144)" />
+			<circle cx="20.91" cy="6.856" r="1.711" transform="rotate(-120 20.91 6.856)" />
+			<circle cx="12" cy="1.711" r="1.711" />
+		</g>
+	</svg>
+{/if}
+
 <style lang="postcss" global>
 	.divider {
 		svg {

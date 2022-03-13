@@ -1,13 +1,17 @@
 <script context="module">
 	export const ssr = false
+
+	export const load = async ({ url }) => ({ props: { url } })
 </script>
 
 <script>
 	import '../styles/app.postcss'
 	import { getLocalStorage } from '@lib/utilities.js'
 	import { Question, Yeah, Naw } from '@app/store.js'
+	import Transition from '@components/Transition.svelte'
+	import Theme from '@components/Theme.svelte'
 
-	export let displayQuestion, YeahCount, NawCount, TotalCount
+	export let url, displayQuestion, YeahCount, NawCount, TotalCount
 
 	Question.subscribe((whatnow) => {
 		displayQuestion = whatnow
@@ -30,10 +34,14 @@
 
 <svelte:head>
 	<title>Yeah Naw</title>
+	<meta name="theme-color" media="(prefers-color-scheme: light)" content="#a0c0ba" />
+	<meta name="theme-color" media="(prefers-color-scheme: dark)" content="#283f3c" />
 </svelte:head>
 
 <main>
-	<slot />
+	<Transition {url}>
+		<slot />
+	</Transition>
 </main>
 
 <footer>
@@ -43,6 +51,7 @@
 				Yeah: {YeahCount !== null ? YeahCount : 0} and Naw: {NawCount !== null ? NawCount : 0} / Total:
 				{TotalCount.toString()}
 			{/if}
+			<Theme />
 		</div>
 	</div>
 </footer>
