@@ -30,10 +30,11 @@
 	<DisplayQuestion />
 	<h2 class="text-2xl font-light mb-4 px-8 md:px-16">What do you want to ask?</h2>
 	<form on:submit|preventDefault={submitQuestion} class="px-8 md:px-16">
-    <label for="question-input" class="block pb-2 text-sm italic">Yes or No questions please.</label>
+		<label for="question-input" class="block pb-2 text-sm italic">Yes or No questions please.</label
+		>
 		<div class="flex">
 			<input
-        id="question-input"
+				id="question-input"
 				type="text"
 				name="question"
 				{placeholder}
@@ -41,7 +42,9 @@
 				class="text-celtic p-2 flex-1 rounded-sm"
 				autocomplete="off"
 			/>
-			<button type="submit" class="bg-secondary p-2 text-celtic rounded-sm ml-4">Ask</button>
+			<button type="submit" class="bg-secondaryBackground p-2 text-celtic rounded-sm ml-4"
+				>Ask</button
+			>
 		</div>
 	</form>
 </div>

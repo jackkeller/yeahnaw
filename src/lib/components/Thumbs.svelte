@@ -35,7 +35,7 @@
 		@apply box-border mx-2 overflow-x-hidden relative h-52 flex items-center;
 
 		&:before {
-			@apply absolute bg-secondary w-2 block h-full container z-10;
+			@apply absolute bg-secondaryBackground w-2 block h-full container z-10;
 
 			border-radius: 0 50% 50% 0;
 			content: '';
@@ -47,7 +47,7 @@
 		}
 
 		&:after {
-			@apply absolute bg-secondary w-2 block h-full z-10 right-0;
+			@apply absolute bg-secondaryBackground w-2 block h-full z-10 right-0;
 
 			border-radius: 50% 0 0 50%;
 			content: '';

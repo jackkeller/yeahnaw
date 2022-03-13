@@ -8,7 +8,7 @@
 
 <style>
 	.counter {
-		@apply text-center text-6xl md:text-9xl font-normal mx-auto text-textcolor h-16 md:h-28 pt-3 md:pt-6;
+		@apply text-center text-6xl md:text-9xl font-normal mx-auto text-primaryText h-16 md:h-28 pt-3 md:pt-6;
 	}
 
 	.done {

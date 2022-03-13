@@ -51,7 +51,7 @@
 		{#if newQuestion}
 			<button
 				on:click={() => resetQuestion()}
-				class="bg-secondary py-2 px-5 text-celtic inline-block rounded-sm mx-auto"
+				class="bg-secondaryBackground py-2 px-5 text-celtic inline-block rounded-sm mx-auto"
 				>Ask a New Question?</button
 			>
 		{/if}
@@ -59,7 +59,7 @@
 			<div class="mx-auto px8 md:px-16 pt-6 md:pt-12">
 				<a
 					href="/thoughts"
-					class="text-secondary underline hover:text-patina transition-colors duration-300 ease-in-out"
+					class="text-primaryText underline hover:text-primaryTextHover transition-colors duration-300 ease-in-out"
 					>Read about our approach</a
 				>
 			</div>
@@ -103,7 +103,7 @@
 	}
 
 	.winner-winner-chicken-dinner {
-		@apply bg-secondary grid content-center;
+		@apply bg-secondaryBackground text-secondaryText grid content-center;
 
 		grid-area: winner-winner-chicken-dinner;
 	}

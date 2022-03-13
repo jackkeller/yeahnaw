@@ -64,7 +64,7 @@
 <div class="container mx-auto px-8 md:px-16 pt-12">
 	<h1 class="text-4xl md:text-6xl font-light mb-8 leading-normal">Yeah Naw</h1>
 
-	<blockquote class="border-l-4 border-secondary pl-4 mb-8">
+	<blockquote class="border-l-4 border-assetStroke pl-4 mb-8">
 		Decisions were made, actions were taken, results happened.
 	</blockquote>
 
@@ -100,6 +100,6 @@
 	}
 
 	a {
-		@apply text-secondary underline hover:text-patina transition-colors duration-300 ease-in-out;
+		@apply text-primaryText underline hover:text-primaryTextHover transition-colors duration-300 ease-in-out;
 	}
 </style>

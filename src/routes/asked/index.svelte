@@ -124,7 +124,7 @@
 	}
 
 	.throw-hands {
-		@apply bg-secondary grid content-center;
+		@apply bg-secondaryBackground grid content-center;
 
 		grid-area: throw-hands;
 	}
