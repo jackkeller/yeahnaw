@@ -1,5 +1,5 @@
 <script>
-	export let name, yeah, naw
+	export let name, yeah = '', naw = ''
 </script>
 
 {#if name === 'arm-up'}

@@ -2,8 +2,10 @@
 	import { getLocalStorage, setLocalStorage } from '@lib/utilities.js'
 	import Assets from '@components/Assets.svelte'
 
-	export let ariaTitle,
+	let ariaTitle,
 		asset = getLocalStorage('theme') === 'dark' ? 'sun' : 'moon'
+
+  ariaTitle = `Switch to ${getLocalStorage('theme') === 'dark' ? 'Light' : 'Dark'} Mode` 
 
 	const switchTheme = () => {
 		const theme = getLocalStorage('theme')
@@ -11,12 +13,12 @@
 			setLocalStorage('theme', 'light')
 			asset = 'moon'
 			document.documentElement.classList.remove('dark')
-			ariaTitle = 'Switch to Light Mode'
+			ariaTitle = 'Switch to Dark Mode'
 		} else {
 			setLocalStorage('theme', 'dark')
 			asset = 'sun'
 			document.documentElement.classList.add('dark')
-			ariaTitle = 'Switch to Dark Mode'
+			ariaTitle = 'Switch to Light Mode'
 		}
 	}
 </script>
