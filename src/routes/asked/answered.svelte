@@ -33,7 +33,7 @@
 
 	const resetQuestion = () => {
 		clearQuestionData()
-		Question.set(null)
+		Question.set('')
 		Yeah.set(0)
 		Naw.set(0)
 

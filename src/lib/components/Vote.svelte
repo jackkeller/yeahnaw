@@ -2,7 +2,7 @@
 	import Assets from '@components/Assets.svelte'
 	import { Yeah, Naw } from '@app/store.js'
 
-	export let yeah, naw
+	export let yeah, naw, voted = false
 
 	Yeah.subscribe((y) => (yeah = y))
 	Naw.subscribe((n) => (naw = n))
@@ -11,16 +11,17 @@
 		if (v === 'y') {
 			Yeah.update((n) => n + 1)
 		} else {
-			Naw.update((n) => n + 1)
+      Naw.update((n) => n + 1)
 		}
+    voted = true
 	}
 </script>
 
 <div class="flex justify-center">
-	<button class="button-yeah border-yesColor" on:click={() => vote('y')} aria-label="Vote Yes">
+	<button class="button-yeah border-yesColor" on:click={() => vote('y')} aria-label="Vote Yes" disabled={voted}>
 		<Assets name="vote-up" />
 	</button>
-	<button class="button-naw border-noColor" on:click={() => vote('n')} aria-label="Vote No">
+	<button class="button-naw border-noColor" on:click={() => vote('n')} aria-label="Vote No" disabled={voted}>
 		<Assets name="vote-down" />
 	</button>
 </div>
@@ -36,5 +37,9 @@
 		&.button-naw {
 			@apply justify-end;
 		}
+
+    &[disabled] {
+      opacity: 0.5;
+    }
 	}
 </style>

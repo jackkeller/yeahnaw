@@ -150,14 +150,14 @@
 		@apply relative;
 
 		.value {
-			@apply absolute bottom-8 right-11 text-3xl z-10 font-bold text-white;
+			@apply absolute bottom-12 right-5 md:bottom-8 md:right-11 text-xl md:text-3xl z-10 font-bold text-white;
 		}
 	}
 	.arm-down {
 		@apply relative;
 
 		.value {
-			@apply absolute top-8 left-14 text-3xl z-10 font-bold text-white;
+			@apply absolute top-12 left-7 md:top-8 md:left-14 text-xl md:text-3xl z-10 font-bold text-white;
 		}
 	}
 </style>
