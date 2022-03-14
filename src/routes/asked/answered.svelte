@@ -1,7 +1,7 @@
 <script>
 	import { goto } from '$app/navigation'
 	import { ConfettiExplosion } from 'svelte-confetti-explosion'
-	import { getLocalStorage, clearLocalStorage } from '@lib/utilities.js'
+	import { getLocalStorage, clearQuestionData } from '@lib/utilities.js'
 	import { Question, Yeah, Naw } from '@app/store.js'
 	import DisplayQuestion from '@components/DisplayQuestion.svelte'
 	import Assets from '@components/Assets.svelte'
@@ -32,7 +32,7 @@
 	$: WinnerPercent = yeah > naw ? (yeah / 50) * 100 : (naw / 50) * 100
 
 	const resetQuestion = () => {
-		clearLocalStorage()
+		clearQuestionData()
 		Question.set(null)
 		Yeah.set(0)
 		Naw.set(0)
