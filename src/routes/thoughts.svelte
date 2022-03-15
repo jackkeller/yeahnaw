@@ -87,7 +87,7 @@
 		{/each}
 	</ul>
 
-	<p>Back to the <a href="/asked/answered">Results</a></p>
+	<p class="mb-8">Back to the <a href="/asked/answered">Results</a></p>
 </div>
 
 <style>
